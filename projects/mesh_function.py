@@ -4,11 +4,17 @@ import numpy as np
 
 
 def mesh_function(f: Callable[[float], float], t: np.ndarray) -> np.ndarray:
-    raise NotImplementedError
+    farray = np.zeros(len(t))
+    for i in range(len(t)):
+        farray[i]=f(t[i])
+    return farray    
 
 
 def func(t: float) -> float:
-    raise NotImplementedError
+    if t<=3:
+        return np.exp(-t)
+    else:
+        return np.exp(-3*t)
 
 
 def test_mesh_function():

@@ -57,3 +57,7 @@ def test_solver_three_steps():
     diff = np.abs(u - u_by_hand).max()
     success = diff < tol
     assert success
+
+if __name__ == "__main__":
+    plot_numerical_and_exact(0.5,1,1,5,8.5)
+    
